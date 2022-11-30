@@ -2,10 +2,11 @@ const findTheOldest = function(people) {
     let age = 0,
         highestAge = 0,
         personIndex = 0,
-        year = new Date();
+        year = 0;
+    const date = new Date();
     for (let i = 0; i < people.length; i++) {
         if(!Number.isFinite(people[i].yearOfDeath)) {
-            year.getFullYear();
+            year = date.getFullYear();
             age = year - people[i].yearOfBirth;
         } else {
             age = people[i].yearOfDeath - people[i].yearOfBirth;
